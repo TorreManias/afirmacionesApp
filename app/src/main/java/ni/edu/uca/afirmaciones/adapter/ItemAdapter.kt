@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ni.edu.uca.afirmaciones.R
@@ -16,6 +17,7 @@ class ItemAdapter(
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view){
         val textView : TextView = view.findViewById(R.id.item_title)
+        val imagenesPaisajeVista : ImageView = view.findViewById(R.id.vistaImagenes)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -27,6 +29,7 @@ class ItemAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.idString)
+        holder.imagenesPaisajeVista.setImageResource(item.imageResourceId)
     }
 
     override fun getItemCount(): Int {

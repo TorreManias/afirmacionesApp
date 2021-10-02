@@ -1,4 +1,10 @@
 package ni.edu.uca.afirmaciones.model
 
-data class Afirmacion(val idString: Int) {
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+
+data class Afirmacion(
+    @StringRes val idString: Int,
+    @DrawableRes val imageResourceId: Int) {
+
 }
